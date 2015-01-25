@@ -85,8 +85,7 @@ def login():
                 }
         elif AUTH == 'pam':
             user = None
-            p = pam.pam()
-            if p.authenticate(request_username, request_passwd, service=PAM_SERVICE):
+            if pam.authenticate(request_username, request_passwd, service=PAM_SERVICE):
                 user = {
                     'username': request_username,
                     'name': request_username,
